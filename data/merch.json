@@ -1,0 +1,194 @@
+{
+  "updated": "2026-11-06",
+  "provider": "Fourthwall",
+  "providerNote": "Fourthwall/Shopify ready. Hot-pink theme. Fill storeUrl + productUrl when shop is connected. Patch masters in /home/slate/efc-merch/patches/.",
+  "storeUrl": "",
+  "notifyEmail": "",
+  "currency": "USD",
+  "products": [
+    {
+      "id": "hoodie-badge",
+      "name": "EFC Badge Hoodie",
+      "type": "Hoodie",
+      "price": 55,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
+      "colors": [
+        "Black",
+        "Charcoal"
+      ],
+      "description": "Heavy hoodie with the EFC crest badge.",
+      "designFile": "efc-badge.png",
+      "image": "images/merch/efc-badge.jpg",
+      "productUrl": ""
+    },
+    {
+      "id": "patch-fist-burst",
+      "name": "Fist Burst Embroidered Patch",
+      "type": "Embroidered Patch",
+      "price": 12,
+      "sizes": [
+        "One size (~3\")"
+      ],
+      "colors": [
+        "Black / Hot Pink / Cream"
+      ],
+      "description": "Circular embroidered patch: cream fist punching through a hot-pink burst, EUGENE / FIGHT CLUB arched on black with a merrowed border. Iron-on / sew-on ready once the shop is live.",
+      "designFile": "patches/patch1.jpg",
+      "image": "images/merch/patches/patch-fist-burst.webp",
+      "imageFallback": "images/merch/patches/patch-fist-burst.jpg",
+      "productUrl": ""
+    },
+    {
+      "id": "patch-mics-bolt",
+      "name": "Crossed Mics Lightning Patch",
+      "type": "Woven / Embroidered Patch",
+      "price": 12,
+      "sizes": [
+        "One size (~3\")"
+      ],
+      "colors": [
+        "Black / Hot Pink / Cream"
+      ],
+      "description": "Circular patch with crossed cream microphones and a pink lightning bolt, EUGENE FIGHT CLUB on the ring. Punk energy for jackets and gig bags.",
+      "designFile": "patches/patch2.png",
+      "image": "images/merch/patches/patch-mics-bolt.webp",
+      "imageFallback": "images/merch/patches/patch-mics-bolt.jpg",
+      "productUrl": ""
+    },
+    {
+      "id": "patch-fist-print",
+      "name": "Fist Patch (Print-Ready)",
+      "type": "Embroidered Patch",
+      "price": 12,
+      "sizes": [
+        "One size (~3\")"
+      ],
+      "colors": [
+        "Black / Hot Pink / Cream"
+      ],
+      "description": "VectorCraft print-ready fist patch artwork (SVG master on server). Same fist-through-burst motif \u2014 upload to your POD/embroidery shop as-is.",
+      "designFile": "patches/eugene-fight-club-fist-patch-print-ready.svg",
+      "image": "images/merch/patches/patch-fist-print.webp",
+      "imageFallback": "images/merch/patches/patch-fist-print.jpg",
+      "productUrl": ""
+    },
+    {
+      "id": "tee-jwb",
+      "name": "John War Boots Tee",
+      "type": "T-Shirt",
+      "price": 28,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
+      "colors": [
+        "Black"
+      ],
+      "description": "Track 01 from the self-titled EP.",
+      "designFile": "efc-john-war-boots.png",
+      "image": "images/merch/efc-john-war-boots.jpg",
+      "productUrl": ""
+    },
+    {
+      "id": "tee-starfighter",
+      "name": "Starfighter Song Tee",
+      "type": "T-Shirt",
+      "price": 28,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
+      "colors": [
+        "Black"
+      ],
+      "description": "Track 02 from the self-titled EP.",
+      "designFile": "efc-starfighter-song.png",
+      "image": "images/merch/efc-starfighter-song.jpg",
+      "productUrl": ""
+    },
+    {
+      "id": "tee-swerve",
+      "name": "Last Swerve Tee",
+      "type": "T-Shirt",
+      "price": 28,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
+      "colors": [
+        "Black"
+      ],
+      "description": "Track 03 from the self-titled EP.",
+      "designFile": "efc-last-swerve.png",
+      "image": "images/merch/efc-last-swerve.jpg",
+      "productUrl": ""
+    },
+    {
+      "id": "tee-menthol",
+      "name": "Mr Menthol Tee",
+      "type": "T-Shirt",
+      "price": 28,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
+      "colors": [
+        "Black"
+      ],
+      "description": "Track 04 from the self-titled EP.",
+      "designFile": "efc-mr-menthol.png",
+      "image": "images/merch/efc-mr-menthol.jpg",
+      "productUrl": ""
+    },
+    {
+      "id": "tote-logo",
+      "name": "EFC Tote",
+      "type": "Tote",
+      "price": 22,
+      "sizes": [
+        "One size"
+      ],
+      "colors": [
+        "Natural"
+      ],
+      "description": "Everyday tote with the circular EFC lockup.",
+      "designFile": "efc-logo-lockup.png",
+      "image": "images/merch/efc-logo-lockup.jpg",
+      "productUrl": ""
+    },
+    {
+      "id": "pin-badge",
+      "name": "EFC Badge Pin",
+      "type": "Pin",
+      "price": 8,
+      "sizes": [
+        "One size"
+      ],
+      "colors": [
+        "Metal"
+      ],
+      "description": "Enamel-style badge pin of the EFC crest (upload design to POD pin product).",
+      "designFile": "efc-badge.png",
+      "image": "images/merch/efc-badge.jpg",
+      "productUrl": ""
+    }
+  ]
+}

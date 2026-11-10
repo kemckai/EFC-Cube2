@@ -1,0 +1,53 @@
+{
+  "updated": "2026-11-06",
+  "timezoneNote": "All times local Budapest (CET/CEST) unless noted",
+  "follow": {
+    "ampwall": "https://ampwall.com/a/eugenefightclub",
+    "facebook": "https://www.facebook.com/profile.php?id=61565947809415",
+    "site": ""
+  },
+  "gigs": [
+    {
+      "id": "vortex-2024-12-12",
+      "date": "2024-12-12",
+      "time": "19:00",
+      "venue": "Vortex",
+      "city": "Budapest",
+      "country": "HU",
+      "address": "Dohány utca 22, 1074 Budapest",
+      "title": "Alien Church, Eugene Fight Club, Tunde",
+      "ticketUrl": "https://cooltix.hu/event/6743e38f671af65adfbe1642",
+      "source": "Cooltix",
+      "sourceUrl": "https://cooltix.hu/event/6743e38f671af65adfbe1642",
+      "notes": "Thursday bill at Vortex"
+    },
+    {
+      "id": "riff-2025-03-09",
+      "date": "2025-03-09",
+      "time": null,
+      "venue": "RIFF",
+      "city": "Budapest",
+      "country": "HU",
+      "address": null,
+      "title": "Fuzzrider (GR) + Eugene Fight Club",
+      "ticketUrl": "https://www.tixa.hu/fuzzrider-gr-eugene-fight-club-or-riff-budapest-2025-03-09-20250309",
+      "source": "Tixa",
+      "sourceUrl": "https://www.tixa.hu/fuzzrider-gr-eugene-fight-club-or-riff-budapest-2025-03-09-20250309",
+      "notes": "Support for Fuzzrider (GR)"
+    },
+    {
+      "id": "aurora-2025-04-15",
+      "date": "2025-04-15",
+      "time": "20:00",
+      "venue": "Auróra",
+      "city": "Budapest",
+      "country": "HU",
+      "address": "Auróra utca 11, Budapest VIII",
+      "title": "The Vulcan Itch × Cheetah And The Spaceship × Eugene Fight Club",
+      "ticketUrl": "https://telekomspots.hu/en/events/19008/the-vulcan-itch-cheetah-and-the-spaceship-eugene-fight-club",
+      "source": "Telekom Spots / Wayo",
+      "sourceUrl": "https://telekomspots.hu/en/events/19008/the-vulcan-itch-cheetah-and-the-spaceship-eugene-fight-club",
+      "notes": "Doors ~20:00; listed ticket 2,500 Ft on Wayo write-up"
+    }
+  ]
+}

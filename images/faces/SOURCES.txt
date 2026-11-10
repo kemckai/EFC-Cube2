@@ -1,0 +1,6 @@
+music=/workspace/efc-cube/images/IMG_3083.jpeg
+photos=/workspace/efc-cube/images/IMG_3172.jpeg
+merch=/workspace/efc-cube/images/merch/patches/patch-fist-burst.jpg
+gigs=/workspace/efc-cube/images/IMG_3087.jpeg
+bio=/workspace/efc-cube/images/Keith.jpeg
+connect=/workspace/efc-cube/images/IMG_3173.jpeg

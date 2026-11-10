@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Eugene Fight Club</title>
+  <meta name="description" content="Eugene Fight Club — Budapest rock. Interactive cube: music, photos, merch, gigs." />
+  <link rel="stylesheet" href="css/main.css?v=20261106contact2" />
+</head>
+<body>
+  <canvas id="webgl" aria-label="Interactive 3D band cube"></canvas>
+  <div id="cssCubeStage" class="css-cube-stage" hidden aria-hidden="true">
+    <div class="css-cube" id="cssCube">
+      <div class="face f-music" data-face="music" style="--face-img:url('../images/faces/music.jpg')"><span class="face-caption">Music<small>EP</small></span></div>
+      <div class="face f-photos" data-face="photos" style="--face-img:url('../images/faces/photos.jpg')"><span class="face-caption">Photos<small>Gallery</small></span></div>
+      <div class="face f-merch" data-face="merch" style="--face-img:url('../images/faces/merch.jpg')"><span class="face-caption">Merch<small>Soon</small></span></div>
+      <div class="face f-gigs" data-face="gigs" style="--face-img:url('../images/faces/gigs.jpg')"><span class="face-caption">Gigs<small>Dates</small></span></div>
+      <div class="face f-bio" data-face="bio" style="--face-img:url('../images/faces/bio.jpg')"><span class="face-caption">Band<small>EFC</small></span></div>
+      <div class="face f-connect" data-face="connect" style="--face-img:url('../images/faces/connect.jpg')"><span class="face-caption">Connect<small>Links</small></span></div>
+    </div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <div id="hud">
+    <div class="topbar">
+      <div class="brand">
+        <h1>Eugene Fight Club</h1>
+      </div>
+      <div class="top-actions">
+        <button type="button" class="chip subtle" id="listNavBtn" title="Text / list navigation">List</button>
+      </div>
+    </div>
+
+    <div class="hint" id="hint">
+      Drag to spin · click a face
+    </div>
+    <div class="face-label" id="faceLabel"><span>Music</span></div>
+
+  </div>
+
+  <!-- Section panels -->
+  <div class="panel" id="panel-music" data-panel="music">
+    <div class="panel-card" role="dialog" aria-modal="true" aria-labelledby="musicTitle">
+      <header>
+        <div>
+          <h2 id="musicTitle">Music</h2>
+          <p class="meta" style="color:var(--muted);margin:6px 0 0;">Self-titled debut EP · March 9, 2025 · Spectorclef Studio, Budapest</p>
+        </div>
+        <button type="button" class="close" data-close aria-label="Close">×</button>
+      </header>
+      <div id="musicPanelBody"></div>
+      <p style="margin-top:16px;color:var(--muted);font-size:.9rem;">
+        Stream / buy the EP on <a href="https://ampwall.com/a/eugenefightclub" target="_blank" rel="noopener">Ampwall</a>.
+      </p>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-photos" data-panel="photos">
+    <div class="panel-card" role="dialog" aria-modal="true" aria-labelledby="photosTitle">
+      <header>
+        <h2 id="photosTitle">Photos</h2>
+        <button type="button" class="close" data-close aria-label="Close">×</button>
+      </header>
+      <div class="gallery" id="photoGallery"></div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-merch" data-panel="merch">
+    <div class="panel-card" role="dialog" aria-modal="true" aria-labelledby="merchTitle">
+      <header>
+        <div>
+          <h2 id="merchTitle">Merch</h2>
+          <p class="meta" style="color:var(--muted);margin:6px 0 0;">Print-on-demand · Fourthwall / Shopify Buy Button ready</p>
+        </div>
+        <button type="button" class="close" data-close aria-label="Close">×</button>
+      </header>
+      <div id="merchStoreBar" class="meta" style="color:var(--muted);margin-bottom:12px;display:none;"></div>
+      <div class="merch-grid" id="merchGrid">Loading…</div>
+      <!-- Shopify Buy Button hook stub: fill shopify.domain + storefrontAccessToken + productIds later -->
+      <div id="shopify-buy-root" data-shopify-ready="false" hidden></div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-gigs" data-panel="gigs">
+    <div class="panel-card" role="dialog" aria-modal="true" aria-labelledby="gigsTitle">
+      <header>
+        <div>
+          <h2 id="gigsTitle">Gigs</h2>
+          <p class="meta" style="color:var(--muted);margin:6px 0 0;">Verified listings only — Cooltix, Tixa, Telekom Spots</p>
+        </div>
+        <button type="button" class="close" data-close aria-label="Close">×</button>
+      </header>
+      <div id="gigsUpcoming"></div>
+      <div id="gigsPast"></div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-bio" data-panel="bio">
+    <div class="panel-card" role="dialog" aria-modal="true" aria-labelledby="bioTitle">
+      <header>
+        <h2 id="bioTitle">The Band</h2>
+        <button type="button" class="close" data-close aria-label="Close">×</button>
+      </header>
+      <p style="color:var(--muted);line-height:1.55;max-width:62ch;">
+        Raw rock running wild in the Budapest musical arcade. Formed by Keith McKai (Eugene Kite) on vocals &amp; guitar,
+        Eric De Bosque on bass, and Carlos Gabriel Sánchez on percussion. Debut EP <em>Eugene Fight Club</em> —
+        Recorded at Spectorclef Studio, Budapest; released March 9, 2025.
+      </p>
+      <div class="bio-grid" style="margin-top:18px;">
+        <div class="bio-card">
+          <img src="images/Keith.jpeg" alt="Keith McKai" loading="lazy" />
+          <h3>Keith McKai</h3>
+          <p>Vocals &amp; Guitar · Eugene Kite</p>
+        </div>
+        <div class="bio-card">
+          <img src="images/Bass.jpg" alt="Eric De Bosque" loading="lazy" />
+          <h3>Eric De Bosque</h3>
+          <p>Bass · Perfekt Square</p>
+        </div>
+        <div class="bio-card">
+          <img src="images/drum.jpeg" alt="Carlos Gabriel Sánchez" loading="lazy" />
+          <h3>Carlos Gabriel Sánchez</h3>
+          <p>Percussion</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-connect" data-panel="connect">
+    <div class="panel-card" role="dialog" aria-modal="true" aria-labelledby="connectTitle">
+      <header>
+        <h2 id="connectTitle">Connect</h2>
+        <button type="button" class="close" data-close aria-label="Close">×</button>
+      </header>
+      
+      <p style="color:var(--muted);">Follow for drops, dates, and the EP — or write the band.</p>
+      <div class="social-row" aria-label="Social links">
+        <a class="social-icon" href="https://ampwall.com/a/eugenefightclub" target="_blank" rel="noopener" title="Ampwall"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 14.5c1.2 1.4 2.5 2 4 2s2.8-.6 4-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="10" r="1.2" fill="currentColor"/><circle cx="15" cy="10" r="1.2" fill="currentColor"/></svg><span>Ampwall</span></a>
+        <a class="social-icon" href="https://www.facebook.com/profile.php?id=61565947809415" target="_blank" rel="noopener" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8h2.5V5.5H14c-2 0-3.5 1.4-3.5 3.4V11H8.5v2.8H10.5V20h3v-6.2H16L16.5 11h-3V9c0-.6.3-1 1-1z"/></svg><span>Facebook</span></a>
+        <a class="social-icon" href="mailto:eugenefightclub@gmail.com" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Email</span></a>
+      </div>
+      <p class="contact-mail">
+        Band email:
+        <a href="mailto:eugenefightclub@gmail.com">eugenefightclub@gmail.com</a>
+      </p>
+      <form class="contact-form" id="contactForm" novalidate>
+        <h3>Write the band</h3>
+        <label>Name
+          <input type="text" name="name" required maxlength="100" autocomplete="name" placeholder="Your name" />
+        </label>
+        <label>Email
+          <input type="email" name="email" required maxlength="200" autocomplete="email" placeholder="you@example.com" />
+        </label>
+        <label>Subject
+          <select name="subject" required>
+            <option value="" disabled selected>Choose…</option>
+            <option>Booking</option>
+            <option>Press</option>
+            <option>Merch</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Message
+          <textarea name="message" required maxlength="4000" rows="4" placeholder="What’s up?"></textarea>
+        </label>
+        <!-- honeypot -->
+        <label class="hp" aria-hidden="true">Company
+          <input type="text" name="company" tabindex="-1" autocomplete="off" />
+        </label>
+        <button type="submit" class="contact-submit">Send message</button>
+        <p class="contact-status" id="contactStatus" role="status" aria-live="polite" hidden></p>
+      </form>
+
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo">
+    <button type="button" id="lightboxClose" aria-label="Close">×</button>
+    <img id="lightboxImg" alt="" />
+  </div>
+
+  <!-- Reduced-motion / non-3D fallback -->
+  <div class="fallback" id="fallback" hidden>
+    <div class="fallback-bar">
+      <button type="button" class="back-cube" id="backToCube">← Back to cube</button>
+      <span class="fallback-hint">Esc also returns</span>
+    </div>
+    <h1>Eugene Fight Club</h1>
+    <p style="color:var(--muted);">Budapest</p>
+    <nav aria-label="Sections">
+      <button type="button" class="chip" data-open="music">Music</button>
+      <button type="button" class="chip" data-open="photos">Photos</button>
+      <button type="button" class="chip" data-open="merch">Merch</button>
+      <button type="button" class="chip" data-open="gigs">Gigs</button>
+      <button type="button" class="chip" data-open="bio">Band</button>
+      <button type="button" class="chip" data-open="connect">Connect</button>
+    </nav>
+    <p style="color:var(--muted);font-size:.9rem;">3D cube is paused for reduced motion / list view. Sections open the same panels.</p>
+    <div class="social-row list-socials" aria-label="Social links">
+      <a class="social-icon" href="https://ampwall.com/a/eugenefightclub" target="_blank" rel="noopener" title="Ampwall"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 14.5c1.2 1.4 2.5 2 4 2s2.8-.6 4-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="10" r="1.2" fill="currentColor"/><circle cx="15" cy="10" r="1.2" fill="currentColor"/></svg><span>Ampwall</span></a>
+      <a class="social-icon" href="https://www.facebook.com/profile.php?id=61565947809415" target="_blank" rel="noopener" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8h2.5V5.5H14c-2 0-3.5 1.4-3.5 3.4V11H8.5v2.8H10.5V20h3v-6.2H16L16.5 11h-3V9c0-.6.3-1 1-1z"/></svg><span>Facebook</span></a>
+      <a class="social-icon" href="mailto:eugenefightclub@gmail.com" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Email</span></a>
+    </div>
+    <p class="contact-mail">Band email: <a href="mailto:eugenefightclub@gmail.com">eugenefightclub@gmail.com</a> · open <button type="button" class="linkish" data-open="connect">Connect</button> to write us.</p>
+  </div>
+
+  <script type="module" src="js/app.js?v=20261106contact2"></script>
+</body>
+</html>
